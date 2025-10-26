@@ -1,17 +1,7 @@
-#include <string>
-#include <iostream>
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
-int main ()
+void PhoneBook::add_contact()
 {
-    std::string Types;
-    while(42)
-    {
-        std::cout << "Type ADD, or SEARCH, or EXIT...\n";
-        std::cin >> Types;
-        if (Types == "ADD")
-        {
-            std::cout << "yes\n";
-        }
-    }
-    return 0;  
+    Contact::set_firstname()
 }
