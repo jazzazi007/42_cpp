@@ -3,8 +3,10 @@
 int main ()
 {
     std::string Types;
+    PhoneBook phonebook;
     std::string data_contact[5];
     bool num_check = true;
+    int index;
     while(42)
     {
         std::cout << "Type ADD, or SEARCH, or EXIT...\n";
@@ -38,10 +40,24 @@ int main ()
             }
             std::cout << "Darkest Secret: ";
             std::cin >> data_contact[4];
+            phonebook.add_contact(data_contact);
         }
         else if (Types == "SEARCH")
         {
-            std::cout << "search\n";
+            phonebook.display_phonebook();
+			std::cout << "\nInsert Index: ";
+			std::cin >> index;
+			if (std::cin.fail() || index < 0 || index >= phonebook.get_size())
+			{
+				std::cout << "Invalid Index!\n" << std::endl;
+				std::cin.clear();
+				std::getline(std::cin, Types);
+				continue;
+			}
+			phonebook.display_contact(index);
+			std::cin.clear();
+			std::getline(std::cin, Types);
+			continue;
         }
         else if (Types == "EXIT")
             break;
