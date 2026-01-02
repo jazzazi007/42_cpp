@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = Weapon
 
 SRCS = src/HumanA.cpp src/HumanB.cpp src/main.cpp src/Weapon.cpp
 OBJS = ${SRCS:.cpp=.o}
