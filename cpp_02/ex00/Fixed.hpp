@@ -14,7 +14,7 @@ class Fixed{
 
     private:
         int fixedPoint;
-        int fracBit;
+        static const int fracBit;
 
 };
 
