@@ -14,6 +14,34 @@ Fixed::Fixed(const Fixed& fix) : fixedPoint(fix.fixedPoint)
     return ;
 }
 
+Fixed::Fixed(const int num)
+{
+    std::cout << "Int constructor called\n";
+    this->fixedPoint = num <<fracBit;   
+}
+
+Fixed::Fixed(const float numfloat)
+{
+    std::cout << "Float constructor called\n";
+    this->fixedPoint = roundf(numfloat * (1 << fracBit));
+}
+
+float Fixed::toFloat() const
+{
+    return ((float)this->fixedPoint / (1 << fracBit));
+}
+
+int Fixed::toInt() const
+{
+    return (this->fixedPoint >> fracBit);
+}
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fix)
+{
+    os << fix.toFloat();
+    return (os);
+}
+
 Fixed &Fixed::operator=(const Fixed& op)
 {
     std::cout << "Copy assignment operator called\n";

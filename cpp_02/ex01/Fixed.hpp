@@ -11,12 +11,12 @@ class Fixed{
         Fixed(const int num);
         Fixed(const float numfloat);
         Fixed &operator=(const Fixed& op);
-        Fixed &operator<<(const Fixed& shift);
         ~Fixed();
         int getRawBits( void ) const;
         void setRawBits( const int raw );
         float toFloat( void ) const;
         int toInt( void ) const;
+        friend std::ostream &operator<<(std::ostream &os, const Fixed &fix);
 
 
     private:
