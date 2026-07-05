@@ -120,3 +120,24 @@ int Fixed::operator-(const Fixed& other)
     return(fixedPoint - other.fixedPoint);
 }
 
+
+// TODO: Implement increment operators here in Fixed.cpp
+// - Pre-increment (member): increment the smallest fractional unit and return *this
+//   Example implementation pattern:
+//     Fixed &Fixed::operator++() { this->fixedPoint += 1; return *this; }
+// - Post-increment (member): return old value then increment
+//   Example implementation pattern:
+//     Fixed Fixed::operator++(int) { Fixed tmp(*this); ++(*this); return tmp; }
+ Fixed &Fixed::operator++() { this->fixedPoint += 1; return *this; }
+ //Fixed Fixed::operator++(int) { Fixed tmp(*this); ++(*this); return tmp; }
+// TODO: Implement static max overloads here
+// - Non-const: Fixed &Fixed::max(Fixed &a, Fixed &b) { return (a > b ? a : b); }
+Fixed &Fixed::max(Fixed &a, Fixed &b) { return (a > b ? a : b); }
+// - Const: const Fixed &Fixed::max(const Fixed &a, const Fixed &b) { return (a > b ? a : b); }
+//const Fixed &Fixed::max(const Fixed &a, const Fixed &b) { return ( a > b ? a : b); }
+// Ensure the signatures match the declarations added to Fixed.hpp.
+
+// NOTE: Consider that arithmetic operator implementations currently return `int`.
+// For correct fixed-point arithmetic you may want to change their return types to `Fixed`
+// and implement proper scaling for multiplication/division.
+

@@ -22,6 +22,24 @@ class Fixed{
         int operator-(const Fixed& other);
         int operator/(const Fixed& other);
         int operator*(const Fixed& other);
+        Fixed &operator++();
+       // Fixed &operator++(int);
+        // TODO: Add increment operators
+        // - Pre-increment (member): increments the smallest fractional unit and returns *this
+        //   Signature: Fixed &operator++();
+        // - Post-increment (member): returns the previous value, signature takes an int
+        //   Signature: Fixed operator++(int);
+        // Add these declarations here and implement them in Fixed.cpp.
+        // NOTE: Ensure pre-increment returns Fixed& and post-increment returns Fixed by value.
+
+        static Fixed &max(Fixed &a, Fixed &b);
+        //static const Fixed &max(const Fixed &a, const Fixed &b);
+        // TODO: Add static max overloads
+        // - Non-const overload: returns the larger of two non-const Fixed references
+        //   Signature: static Fixed &max(Fixed &a, Fixed &b);
+        // - Const overload: returns the larger of two const Fixed references
+        //   Signature: static const Fixed &max(const Fixed &a, const Fixed &b);
+        // Implement these in Fixed.cpp and ensure you use the existing comparison operators.
         
         ~Fixed();
         int getRawBits( void ) const;
