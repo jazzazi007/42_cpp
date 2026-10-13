@@ -6,9 +6,9 @@
 
 class ClapTrap{
     public:
-    //ClapTrap(std::string name);
+    ClapTrap(std::string name);
 
-    ClapTrap(std::string name, int hp = 10, int ep = 10, int damage = 0);
+    ClapTrap(std::string name, int hp, int ep, int damage);
     ~ClapTrap()
     {
         std::cout << name

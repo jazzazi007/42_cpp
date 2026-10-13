@@ -1,5 +1,5 @@
 #include "ClapTrap.hpp"
-/*
+
 ClapTrap::ClapTrap(std::string name): name(name)
 {
     this->HitPoints = 10;
@@ -7,7 +7,7 @@ ClapTrap::ClapTrap(std::string name): name(name)
     this->AttackDamage = 0;
     std::cout << "ClapTrap "<< name << ". Hit Points: "<< this->HitPoints <<
                 ". EnergyPoints: "<< this->EnergyPoints<< ". Attack Damage: "<< this->AttackDamage<<". \n";
-}*/
+}
 
 ClapTrap::ClapTrap(std::string name, int hp, int ep, int damage)
     : name(name), HitPoints(hp), EnergyPoints(ep), AttackDamage(damage)
